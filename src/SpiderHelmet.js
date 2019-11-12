@@ -7,7 +7,7 @@ const SpiderHelmet = (props) => {
 	if(props.glowing){
 
 		spiderCss = {
-			color:"limegreen",
+			color:"green",
 			boxShadow: "inset 10px 10px 10px rgba(50,200,0,.5)"
 		}
 
