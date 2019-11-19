@@ -61,7 +61,7 @@ render(){
       </div>
 
       <div className="SpiderHolder">
-      {this.state.spiders.map((item,index)=>{ return <SpiderHelmet key={`${index}_${item.name}`} glowing={item.glowing}>{item.name}</SpiderHelmet>})}
+      {this.state.spiders.map((item,index)=>{ return <SpiderHelmet onClick={()=>{ alert(item.name); } } key={`${index}_${item.name}`} glowing={item.glowing}>{item.name}</SpiderHelmet>})}
       </div>
 
     </div>

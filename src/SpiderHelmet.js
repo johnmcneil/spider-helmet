@@ -16,7 +16,7 @@ const SpiderHelmet = (props) => {
 
 	};
 
-	return(<div className='spider' style={spiderCss}>
+	return(<div onClick={props.onClick} className='spider' style={spiderCss}>
 
 				<div className="spiderName">{props.children}</div>
 
