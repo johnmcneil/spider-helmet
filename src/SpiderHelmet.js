@@ -20,8 +20,23 @@ const SpiderHelmet = (props) => {
 
 				<div className="spiderName">{props.children}</div>
 
-				<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-				  <circle cx="50" cy="50" r="25"/>
+				<svg viewBox="-55 -55 110 110" xmlns="http://www.w3.org/2000/svg">
+
+				  <path d="M 0 0 C 0 0, 0 0, 50 50" stroke="black" fill="transparent"/>
+				  <path d="M 0 0 C 0 0, 0 0, 50 25" stroke="black" fill="transparent"/>
+				  <path d="M 0 0 C 0 0, 0 0, 50 0" stroke="black" fill="transparent"/>
+				  <path d="M 0 0 C 0 0, 0 0, 50 -25" stroke="black" fill="transparent"/>
+
+
+
+				  <path d="M 0 0 C 0 0, 0 0, -50 50" stroke="black" fill="transparent"/>
+				  <path d="M 0 0 C 0 0, 0 0, -50 25" stroke="black" fill="transparent"/>
+				  <path d="M 0 0 C 0 0, 0 0, -50 0" stroke="black" fill="transparent"/>
+				  <path d="M 0 0 C 0 0, 0 0, -50 -25" stroke="black" fill="transparent"/>
+
+
+				  <circle cx="0" cy="0" r="25"/>
+
 				</svg>
 			</div>);
 
