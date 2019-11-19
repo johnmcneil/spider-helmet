@@ -48,21 +48,13 @@ render(){
   
   return (
     <div className="App">
-      {/*this.state.spiders.map((item,index)=>{ return `${item} ${index}`;  })*/}
 
-      {
-        // i am a comment
-      }
-      <button onClick={this.addSpider}>add spider</button>
-      <button onClick={this.removeSpider}>remove spider</button>
-      {this.state.spiders.map((item,index)=>{ return <SpiderHelmet glowing={item.glowing}>{item.name}</SpiderHelmet>})}
 
-      {/*  
-      <SpiderHelmet glowing={true}/>
-      <SpiderHelmet>
-        am am things inside SpiderHelmet
-      </SpiderHelmet>
-      */}
+      <button key={'addSpider'} onClick={this.addSpider}>add spider</button>
+      <button key={'removeSpider'} onClick={this.removeSpider}>remove spider</button>
+      {this.state.spiders.map((item,index)=>{ return <SpiderHelmet key={`${index}_${item.name}`} glowing={item.glowing}>{item.name}</SpiderHelmet>})}
+
+
     </div>
   );
 
