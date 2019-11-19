@@ -48,12 +48,14 @@ render(){
   
   return (
     <div className="App">
+      <div className="ButtonHolder">
+           <button key={'addSpider'} onClick={this.addSpider}>add spider</button>
+           <button key={'removeSpider'} onClick={this.removeSpider}>remove spider</button>   
+      </div>
 
-
-      <button key={'addSpider'} onClick={this.addSpider}>add spider</button>
-      <button key={'removeSpider'} onClick={this.removeSpider}>remove spider</button>
+      <div className="SpiderHolder">
       {this.state.spiders.map((item,index)=>{ return <SpiderHelmet key={`${index}_${item.name}`} glowing={item.glowing}>{item.name}</SpiderHelmet>})}
-
+      </div>
 
     </div>
   );

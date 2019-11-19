@@ -1,0 +1,29 @@
+
+
+.spider {
+	position: relative;
+	width: 20%;
+}
+
+.spider svg{
+
+}
+
+
+.spiderName{
+	position: absolute;
+	line-height: initial;
+	bottom: 0;
+	width:100%;
+	text-align: center;
+	font-size: 3vw;
+}
+
+@media (max-width: 600px) {
+
+	.spider {
+		position: relative;
+		width: 33%;
+	}
+
+}
