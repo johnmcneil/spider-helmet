@@ -10,10 +10,10 @@ constructor(props){
   super(props);
   this.state = { 
     spiders : [
-      {name:'tom', glowing : false },
-      {name:'charles', glowing : true },
-      {name:'felicity', glowing : true },
-      {name:'daren', glowing : false },
+      {name:'Tom', glowing : false },
+      {name:'Charles', glowing : true },
+      {name:'Felicity', glowing : true },
+      {name:'Daren', glowing : false },
     ]
   };
 }
@@ -22,13 +22,20 @@ addSpider = () =>{
 
   this.setState((prevState,prevProps)=>{
     
-    const name = [0,0].map((item,index)=>{
+    const numSyllables = 2;
+    const nameLengthArray = Array.from(Array(numSyllables).keys());
+
+    let name = nameLengthArray.map((item,index)=>{
       return syllables[Math.floor(Math.random()*syllables.length)];
     });
 
+    name = name.join('');
+
+    const respectfulName = `${name[0].toUpperCase()}${name.substring(1)}`;
+
     const glowing = Math.round(Math.random());
 
-    return prevState.spiders.push({ name , glowing : !!glowing});     
+    return prevState.spiders.push({ name : respectfulName , glowing : !!glowing});     
 
   });
 

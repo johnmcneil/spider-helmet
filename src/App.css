@@ -18,5 +18,6 @@ body, html {
 .SpiderHolder{
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
   line-height: 0;
 }
