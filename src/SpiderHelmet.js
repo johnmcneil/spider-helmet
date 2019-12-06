@@ -1,6 +1,6 @@
 import React from 'react';
-import styles from './SpiderHelmet.css';
-
+import './SpiderHelmet.css';
+import Pizzicato from 'pizzicato';
 
 const SpiderHelmet = (props) => {
 
@@ -15,6 +15,14 @@ const SpiderHelmet = (props) => {
 
 	};
 
+
+let sound = new Pizzicato.Sound({ 
+        source: 'wave',
+        options: { type: 'sawtooth', frequency: props.frequency }
+});
+
+sound.play();
+window.setTimeout( () => { sound.stop() }, 500 );
 	return(<div onClick={props.onClick} className='spider' style={spiderCss}>
 
 				<div className="spiderName">{props.children}</div>

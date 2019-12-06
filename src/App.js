@@ -11,10 +11,7 @@ constructor(props){
   super(props);
   this.state = { 
     spiders : [
-      {name:'Tom', glowing:false, hatColor : 'black' },
-      {name:'Charles', glowing:true, hatColor: 'green' },
-      {name:'Felicity', glowing:true, hatColor: 'red' },
-      {name:'Daren', glowing:false, hatColor: 'blue' },
+
     ]
   };
 }
@@ -36,9 +33,12 @@ addSpider = () =>{
 
     const hatColor = colors[Math.floor(Math.random()*colors.length)];
 
+    const frequency = Math.random() * 880;
+
+
     const glowing = Math.round(Math.random());
 
-    return prevState.spiders.push({ name : respectfulName , glowing : !!glowing , hatColor : hatColor });     
+    return prevState.spiders.push({ name : respectfulName , glowing : !!glowing , hatColor : hatColor, frequency: frequency });     
 
   });
 
@@ -48,7 +48,6 @@ addSpider = () =>{
 removeSpider = (index) =>{
 
   this.setState((prevState,prevProps)=>{ 
-    console.log("index", index);
 
     if ( index >= 0 ) {
 
@@ -68,7 +67,7 @@ removeSpider = (index) =>{
 }
 
 render(){
-  
+
   return (
     <div className="App">
       <div className="ButtonHolder">
@@ -78,7 +77,16 @@ render(){
       </div>
 
       <div className="SpiderHolder">
-      {this.state.spiders.map((item,index)=>{ return <SpiderHelmet onClick={()=>{ this.removeSpider(index); } } key={`${index}_${item.name}`} glowing={item.glowing} hatColor={item.hatColor}>{item.name}</SpiderHelmet>})}
+      {this.state.spiders.map((item,index)=>{ 
+        return <SpiderHelmet 
+                  onClick={()=>{ this.removeSpider(index); } } 
+                  key={`${index}_${item.name}`} 
+                  glowing={item.glowing}
+                  frequency={item.frequency} 
+                  hatColor={item.hatColor}>
+                    {item.name}
+                  </SpiderHelmet>
+      })}
       </div>
 
     </div>
