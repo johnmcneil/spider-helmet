@@ -44,12 +44,25 @@ addSpider = () =>{
 
 }
 
-removeSpider = () =>{
-  
+
+removeSpider = (index) =>{
+
   this.setState((prevState,prevProps)=>{ 
+    console.log("index", index);
 
-    return {spiders : prevState.spiders.slice(0,-1) }; 
+    if ( index >= 0 ) {
 
+      if ( window.confirm(`Do you really want to remove ${prevState.spiders[index].name}?`) ) {
+        return {spiders : prevState.spiders.filter( (spider, i) => {
+          if ( i === index ) { 
+            return false
+          } else { return true; }
+        })}
+      }
+
+    } else {
+      return {spiders : prevState.spiders.slice(0,-1) }; 
+    }
   });
 
 }
@@ -60,11 +73,12 @@ render(){
     <div className="App">
       <div className="ButtonHolder">
            <button key={'addSpider'} onClick={this.addSpider}>add spider</button>
-           <button key={'removeSpider'} onClick={this.removeSpider}>remove spider</button>   
+           <button key={'removeSpider'} onClick={this.removeSpider}>remove spider</button>
+
       </div>
 
       <div className="SpiderHolder">
-      {this.state.spiders.map((item,index)=>{ return <SpiderHelmet onClick={()=>{ alert(item.name); } } key={`${index}_${item.name}`} glowing={item.glowing} hatColor={item.hatColor}>{item.name}</SpiderHelmet>})}
+      {this.state.spiders.map((item,index)=>{ return <SpiderHelmet onClick={()=>{ this.removeSpider(index); } } key={`${index}_${item.name}`} glowing={item.glowing} hatColor={item.hatColor}>{item.name}</SpiderHelmet>})}
       </div>
 
     </div>

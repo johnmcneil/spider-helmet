@@ -1,7 +1,6 @@
 import React from 'react';
 import styles from './SpiderHelmet.css';
 
-console.log(styles);
 
 const SpiderHelmet = (props) => {
 
@@ -15,9 +14,6 @@ const SpiderHelmet = (props) => {
 		}
 
 	};
-
-	//console.log("hatColor", props.hatColor);
-	console.log("props", props);
 
 	return(<div onClick={props.onClick} className='spider' style={spiderCss}>
 
