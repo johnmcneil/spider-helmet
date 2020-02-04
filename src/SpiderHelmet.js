@@ -18,14 +18,15 @@ const SpiderHelmet = (props) => {
 
 let sound = new Pizzicato.Sound({ 
         source: 'wave',
-        options: { type: 'sawtooth', frequency: props.frequency }
+        options: { type: 'sawtooth', frequency: props.note.freq }
 });
 
 sound.play();
 window.setTimeout( () => { sound.stop() }, 500 );
+
 	return(<div onClick={props.onClick} className='spider' style={spiderCss}>
 
-				<div className="spiderName">{props.children}</div>
+				<div className="spiderName">{props.children}{props.note.name}</div>
 
 				<svg viewBox="-55 -55 110 110" xmlns="http://www.w3.org/2000/svg">
 

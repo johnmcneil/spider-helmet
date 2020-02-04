@@ -5,6 +5,20 @@ import SpiderHelmet from './SpiderHelmet.js';
 const syllables = ['jo','cat','leen','bo','cra','chur','nan','is','taki','do','ro','ba', 'bo', 'noo', 'tor', 'loop', 'bleep'];
 const colors = ['black', 'green', 'red', 'blue', 'orange', 'lightseagreen', 'magenta', 'olive', 'plum', 'thistle', 'springgreen'  ];
 
+const notes = [
+	{name:'c#' ,freq:277.1826},
+	{name:'d#' ,freq:311.1270},
+	{name:'f#' ,freq:369.9944},
+	{name:'g#' ,freq:415.3047},
+	{name:'a#' ,freq:466.1638},
+	{name:'c#2',freq:554.3653},
+	{name:'d#2',freq:622.2540},
+	{name:'f#2',freq:739.9888},
+	{name:'g#2',freq:830.6094},
+	{name:'a#2',freq:932.3275}
+];
+
+
 class App extends React.Component {
 
 constructor(props){
@@ -33,12 +47,12 @@ addSpider = () =>{
 
     const hatColor = colors[Math.floor(Math.random()*colors.length)];
 
-    const frequency = Math.random() * 880;
-
+    const note = notes[Math.floor(Math.random()*notes.length)];
+    console.log(note);
 
     const glowing = Math.round(Math.random());
 
-    return prevState.spiders.push({ name : respectfulName , glowing : !!glowing , hatColor : hatColor, frequency: frequency });     
+    return prevState.spiders.push({ name : respectfulName , glowing : !!glowing , hatColor : hatColor, note: note });     
 
   });
 
@@ -82,7 +96,7 @@ render(){
                   onClick={()=>{ this.removeSpider(index); } } 
                   key={`${index}_${item.name}`} 
                   glowing={item.glowing}
-                  frequency={item.frequency} 
+                  note={item.note} 
                   hatColor={item.hatColor}>
                     {item.name}
                   </SpiderHelmet>
