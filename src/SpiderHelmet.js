@@ -18,7 +18,7 @@ const SpiderHelmet = (props) => {
 
 	let sound = new Pizzicato.Sound({ 
 	        source: 'wave',
-	        options: { type: 'sawtooth', frequency: props.note.freq }
+	        options: { type: props.instrument , frequency: props.note.freq }
 	});
 
 	let playSpider = function(){
