@@ -4,7 +4,7 @@ import SpiderHelmet from './SpiderHelmet.js';
 
 const syllables = ['jo','cat','leen','bo','cra','chur','nan','is','taki','do','ro','ba', 'bo', 'noo', 'tor', 'loop', 'bleep'];
 const colors = ['black', 'green', 'red', 'blue', 'orange', 'lightseagreen', 'magenta', 'olive', 'plum', 'thistle', 'springgreen'  ];
-
+const instruments = ['sawtooth','sine','square'];
 const notes = [
 	{name:'c#' ,freq:277.1826},
 	{name:'d#' ,freq:311.1270},
@@ -47,12 +47,12 @@ addSpider = () =>{
     const hatColor = colors[Math.floor(Math.random()*colors.length)];
 
     const note = notes[Math.floor(Math.random()*notes.length)];
-    
+    const instrument = instruments[Math.floor(Math.random()*instruments.length)];
     const duration = Math.floor(Math.random()*450) + 10;
 
     const glowing = Math.round(Math.random());
 
-    return prevState.spiders.push({ name : respectfulName , duration: duration, glowing : !!glowing , hatColor : hatColor, note: note });     
+    return prevState.spiders.push({ name : respectfulName , instrument:instrument , duration: duration, glowing : !!glowing , hatColor : hatColor, note: note });     
 
   });
 
@@ -121,6 +121,7 @@ render(){
 	                  glowing={item.glowing}
 	                  note={item.note}
 	                  duration={item.duration}
+	                  instrument={item.instrument}
 	                  hatColor={item.hatColor}>
 	                    {item.name}
 	               </SpiderHelmet>
