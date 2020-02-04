@@ -92,8 +92,7 @@ render(){
 
       <div className="SpiderHolder">
       {this.state.spiders.map((item,index)=>{ 
-        return <SpiderHelmet 
-                  onClick={()=>{ this.removeSpider(index); } } 
+        return <SpiderHelmet  
                   key={`${index}_${item.name}`} 
                   glowing={item.glowing}
                   note={item.note} 
