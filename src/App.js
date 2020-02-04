@@ -18,7 +18,6 @@ const notes = [
 	{name:'a#2',freq:932.3275}
 ];
 
-
 class App extends React.Component {
 
 constructor(props){
@@ -48,11 +47,12 @@ addSpider = () =>{
     const hatColor = colors[Math.floor(Math.random()*colors.length)];
 
     const note = notes[Math.floor(Math.random()*notes.length)];
-    console.log(note);
+    
+    const duration = Math.floor(Math.random()*900) + 100;
 
     const glowing = Math.round(Math.random());
 
-    return prevState.spiders.push({ name : respectfulName , glowing : !!glowing , hatColor : hatColor, note: note });     
+    return prevState.spiders.push({ name : respectfulName , duration: duration, glowing : !!glowing , hatColor : hatColor, note: note });     
 
   });
 
@@ -80,6 +80,29 @@ removeSpider = (index) =>{
 
 }
 
+clickSpiderFromDom = (index = 0)=>{
+	console.log('clickSpiderFromDom playing',index);
+	const spider = document.getElementById(`spider_${index}`);
+
+	if(spider){
+		spider.click();
+	}
+
+}
+
+playSong = (timestamp)=>{
+
+	 let cumulativeDuration = 0;
+	 this.state.spiders.map((spider,index)=>{
+
+	 	cumulativeDuration += spider.duration;
+	 	console.log('i will play spider_'+index+' at '+cumulativeDuration);
+	 	window.setTimeout(()=>{ this.clickSpiderFromDom(index);  },cumulativeDuration);
+
+	 });
+
+}
+
 render(){
 
   return (
@@ -87,19 +110,21 @@ render(){
       <div className="ButtonHolder">
            <button key={'addSpider'} onClick={this.addSpider}>add spider</button>
            <button key={'removeSpider'} onClick={this.removeSpider}>remove spider</button>
-
+           <button key={'playSpider'} onClick={this.playSong}>play song</button>
       </div>
 
       <div className="SpiderHolder">
-      {this.state.spiders.map((item,index)=>{ 
-        return <SpiderHelmet  
-                  key={`${index}_${item.name}`} 
-                  glowing={item.glowing}
-                  note={item.note} 
-                  hatColor={item.hatColor}>
-                    {item.name}
-                  </SpiderHelmet>
-      })}
+	      {this.state.spiders.map((item,index)=>{ 
+	        return <SpiderHelmet 
+	        		  id={`spider_${index}`} 
+	                  key={`${index}_${item.name}`} 
+	                  glowing={item.glowing}
+	                  note={item.note}
+	                  duration={item.duration}
+	                  hatColor={item.hatColor}>
+	                    {item.duration}
+	               </SpiderHelmet>
+	      })}
       </div>
 
     </div>

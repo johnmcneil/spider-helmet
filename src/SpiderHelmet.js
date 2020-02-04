@@ -21,12 +21,11 @@ const SpiderHelmet = (props) => {
 	        options: { type: 'sawtooth', frequency: props.note.freq }
 	});
 
-
 	let playSpider = function(){
-		sound.play(); window.setTimeout( () => { sound.stop() }, 500 );	
+		sound.stop(); sound.play(); window.setTimeout( () => { sound.stop() }, 250 );	
 	}
 
-	return(<div onClick={()=>{ playSpider(); }} className='spider' style={spiderCss}>
+	return(<div id={props.id} onClick={()=>{ playSpider(); }} className='spider' style={spiderCss}>
 
 				<div className="spiderName">{props.children} - {props.note.name}</div>
 
@@ -40,13 +39,10 @@ const SpiderHelmet = (props) => {
 				  <path d="M 0 0 C 0 0, 0 0, 50 0" stroke="black" fill="transparent"/>
 				  <path d="M 0 0 C 0 0, 0 0, 50 -25" stroke="black" fill="transparent"/>
 
-
-
 				  <path d="M 0 0 C 0 0, 0 0, -50 50" stroke="black" fill="transparent"/>
 				  <path d="M 0 0 C 0 0, 0 0, -50 25" stroke="black" fill="transparent"/>
 				  <path d="M 0 0 C 0 0, 0 0, -50 0" stroke="black" fill="transparent"/>
 				  <path d="M 0 0 C 0 0, 0 0, -50 -25" stroke="black" fill="transparent"/>
-
 
 				  <circle cx="0" cy="0" r="25"/>
 
