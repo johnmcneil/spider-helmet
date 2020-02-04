@@ -46,7 +46,7 @@ const SpiderHelmet = (props) => {
 
 				  <circle cx="0" cy="0" r="25"/>
 
-				<text fill="white">{props.note.name}</text>
+				<text text-anchor="middle" fill="white">{props.note.name}</text>
 				</svg>
 			</div>);
 

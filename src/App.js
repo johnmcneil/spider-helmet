@@ -4,7 +4,7 @@ import SpiderHelmet from './SpiderHelmet.js';
 
 const syllables = ['jo','cat','leen','bo','cra','chur','nan','is','taki','do','ro','ba', 'bo', 'noo', 'tor', 'loop', 'bleep'];
 const colors = ['black', 'green', 'red', 'blue', 'orange', 'lightseagreen', 'magenta', 'olive', 'plum', 'thistle', 'springgreen'  ];
-const instruments = ['sawtooth','sine','square'];
+const instruments = ['sine'];
 const notes = [
 	{name:'c#' ,freq:277.1826},
 	{name:'d#' ,freq:311.1270},
