@@ -22,7 +22,7 @@ const SpiderHelmet = (props) => {
 	});
 
 	let playSpider = function(){
-		sound.stop(); sound.play(); window.setTimeout( () => { sound.stop() }, 250 );	
+		sound.stop(); sound.play(); window.setTimeout( () => { sound.stop() }, props.duration );	
 	}
 
 	return(<div id={props.id} onClick={()=>{ playSpider(); }} className='spider' style={spiderCss}>
