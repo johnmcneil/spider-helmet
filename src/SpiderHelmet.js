@@ -27,7 +27,7 @@ const SpiderHelmet = (props) => {
 
 	return(<div id={props.id} onClick={()=>{ playSpider(); }} className='spider' style={spiderCss}>
 
-				<div className="spiderName">{props.children} - {props.note.name}</div>
+				<div className="spiderName">{props.children}</div>
 
 				<svg viewBox="-55 -55 110 110" xmlns="http://www.w3.org/2000/svg">
 
