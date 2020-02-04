@@ -48,7 +48,7 @@ addSpider = () =>{
 
     const note = notes[Math.floor(Math.random()*notes.length)];
     
-    const duration = Math.floor(Math.random()*900) + 100;
+    const duration = Math.floor(Math.random()*450) + 10;
 
     const glowing = Math.round(Math.random());
 
@@ -122,7 +122,7 @@ render(){
 	                  note={item.note}
 	                  duration={item.duration}
 	                  hatColor={item.hatColor}>
-	                    {item.duration}
+	                    {item.name}
 	               </SpiderHelmet>
 	      })}
       </div>
