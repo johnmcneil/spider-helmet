@@ -42,7 +42,7 @@ addSpider = () =>{
 
     name = name.join('');
 
-    const respectfulName = `${name[0].toUpperCase()}${name.substring(1)}`;
+    const respectfulName = `${name[0].toUpperCase()}${name.substring(1)};
 
     const hatColor = colors[Math.floor(Math.random()*colors.length)];
 
