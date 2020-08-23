@@ -3,24 +3,23 @@ import './App.css';
 import SpiderHelmet from './SpiderHelmet.js';
 
 const syllables = ['jo','cat','leen','bo','cra','chur','nan','is','taki','do','ro','ba', 'bo', 'noo', 'tor', 'loop', 'bleep'];
-const colors = ['black', 'green', 'red', 'blue', 'orange', 'lightseagreen', 'magenta', 'olive', 'plum', 'thistle', 'springgreen'  ];
+const colors = ['black', 'green', 'red', 'blue', 'orange', 'lightseagreen', 'magenta', 'olive', 'plum', 'thistle', 'springgreen'];
 const instruments = ['sine'];
 const notes = [
-	{name:'C4#' ,freq:277.1826},
-	{name:'D4#' ,freq:311.1270},
-	{name:'F4#' ,freq:369.9944},
-	{name:'G4#' ,freq:415.3047},
-	{name:'A4#' ,freq:466.1638},
-	{name:'C5#',freq:554.3653},
-	{name:'D5#',freq:622.2540},
-	{name:'F5#',freq:739.9888},
-	{name:'G5#',freq:830.6094},
-	{name:'A5#',freq:932.3275}
+	{name:'C4#', freq:277.1826},
+	{name:'D4#', freq:311.1270},
+	{name:'F4#', freq:369.9944},
+	{name:'G4#', freq:415.3047},
+	{name:'A4#', freq:466.1638},
+	{name:'C5#', freq:554.3653},
+	{name:'D5#', freq:622.2540},
+	{name:'F5#', freq:739.9888},
+	{name:'G5#', freq:830.6094},
+	{name:'A5#', freq:932.3275}
 ];
 
 class App extends React.Component {
-
-constructor(props){
+  constructor(props){
   super(props);
   this.state = { 
     spiders : [
@@ -29,7 +28,7 @@ constructor(props){
   };
 }
 
-addSpider = () =>{
+addSpider = () => {
 
   this.setState((prevState,prevProps)=>{
     
@@ -96,7 +95,7 @@ playSong = (timestamp)=>{
 	 this.state.spiders.map((spider,index)=>{
 
 	 	cumulativeDuration += spider.duration;
-	 	console.log('i will play spider_'+index+' at '+cumulativeDuration);
+	 	console.log(`i will play spider ${index} at ${cumulativeDuration}`);
 	 	window.setTimeout(()=>{ this.clickSpiderFromDom(index);  },cumulativeDuration);
 
 	 });
