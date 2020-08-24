@@ -1,16 +1,14 @@
-
-
 .spider {
 	position: relative;
 	width: 20%;
 }
 
-.spider svg{
+.spider svg {
 
 }
 
 
-.spiderName{
+.spiderName {
 	position: absolute;
 	line-height: initial;
 	bottom: 0;
@@ -20,7 +18,6 @@
 }
 
 @media (max-width: 600px) {
-
 	.spider {
 		position: relative;
 		width: 33%;

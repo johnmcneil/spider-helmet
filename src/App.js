@@ -102,7 +102,7 @@ playSong = (timestamp)=>{
 
 }
 
-render(){
+render() {
 
   return (
     <div className="App">
@@ -126,7 +126,6 @@ render(){
 	               </SpiderHelmet>
 	      })}
       </div>
-
     </div>
   );
 
