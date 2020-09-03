@@ -57,7 +57,6 @@ addSpider = () => {
 
 }
 
-
 removeSpider = (index) =>{
 
   this.setState((prevState,prevProps)=>{ 
