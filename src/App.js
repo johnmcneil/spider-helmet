@@ -45,11 +45,13 @@ addSpider = () => {
 
     const hatColor = colors[Math.floor(Math.random()*colors.length)];
 
+    const glowing = Math.round(Math.random());
+
     const note = notes[Math.floor(Math.random()*notes.length)];
     const instrument = instruments[Math.floor(Math.random()*instruments.length)];
     const duration = Math.floor(Math.random()*200) + 200;
 
-    const glowing = Math.round(Math.random());
+
 
     return prevState.spiders.push({ name : respectfulName , instrument:instrument , duration: duration, glowing : !!glowing , hatColor : hatColor, note: note });     
 
