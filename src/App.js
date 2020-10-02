@@ -29,7 +29,6 @@ class App extends React.Component {
 }
 
 addSpider = () => {
-
   this.setState((prevState,prevProps)=>{
     
     const numSyllables = 2;
@@ -54,7 +53,6 @@ addSpider = () => {
 
 
     return prevState.spiders.push({ name : respectfulName , instrument:instrument , duration: duration, glowing : !!glowing , hatColor : hatColor, note: note });     
-
   });
 
 }
