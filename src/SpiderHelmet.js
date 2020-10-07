@@ -30,7 +30,6 @@ const SpiderHelmet = (props) => {
 				<div className="spiderName">{props.children}</div>
 
 				<svg viewBox="-55 -55 110 110" xmlns="http://www.w3.org/2000/svg">
-
 				  <path d="M 0 0 C 0 0, 0 0, 50 50" stroke="black" fill="transparent"/>
 				  <path d="M 0 0 C 0 0, 0 0, 50 25" stroke="black" fill="transparent"/>
 				  <path d="M 0 0 C 0 0, 0 0, 50 0" stroke="black" fill="transparent"/>
@@ -46,10 +45,10 @@ const SpiderHelmet = (props) => {
 				  <rect x="-12" y="-34" width="25" height="10" fill={props.hatColor} />
 				  <rect x="-7" y="-48" width="14" height="15" fill={props.hatColor} />
 
-				<text text-anchor="middle" fill="white">{props.note.name}</text>
-				</svg>
+				  <text text-anchor="middle" fill="white">{props.note.name}</text>
+			    </svg>
+			    
 			</div>);
-
 }
 
 export default SpiderHelmet;
